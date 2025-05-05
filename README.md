@@ -4,7 +4,7 @@
 
 1. Clone the repository
    ```
-   https://github.com/Semyon1104/Yadro_BaseStations-DSS.git
+   git clone https://github.com/Semyon1104/Yadro_BaseStations-DSS.git
    ```
    and
    ```
@@ -33,7 +33,7 @@
    computer_club_app.exe ../../../input/input.txt
    ```
    Where input.txt - a file with input data of the system located in the input folder
-## How an I test a project on Windows?
+## How can I test a project on Windows?
 
 This project contains tests to verify functionality. To test the project, the Google Test Framework is used as a submodule of the project.
 
@@ -50,7 +50,7 @@ computer_club_tests.exe
 
 1. Clone the repository
    ```
-   https://github.com/Semyon1104/Yadro_BaseStations-DSS.git
+   git clone https://github.com/Semyon1104/Yadro_BaseStations-DSS.git
    ```
    and
    ```
@@ -62,29 +62,29 @@ computer_club_tests.exe
    ```
 4. Configure the project: Create a separate directory for configure the project and compile it:
    ```
-   mkdir build && cd build
-   cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ ..
+   mkdir build
+   cmake -S . -B build
    ```
 5. Build the project: Next, to build the project, we will need to enter the command
    ```
-   make -j$(nproc)
+   cmake --build build --config Release
    ```
 6. Run the project after building the project, you can find example of the system in the following path from the build folder
    ```
-   cd app/Release
+   cd build/app
    ```
    and run the file
    ```
-   ./app/computer_club_app ../input/input.txt
+   ./computer_club_app ../../input/input.txt
    ```
    Where input.txt - a file with input data of the system located in the input folder
-## How an I test a project on Linux?
+## How can I test a project on Linux?
 
 This project contains tests to verify functionality. To test the project, the Google Test Framework is used as a submodule of the project.
 
 To start the testing process locally, you need to go to the directory
 ```
-cd test
+cd build/test
 ```
 and run the following file:
 ```
